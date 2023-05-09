@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_profile_cleansed
+    description: Cleansed table which contains profiles.
+    columns: 
+      - name: profile_id
+        description: Primary key for the profile
+        tests:
+        - unique
+        - not_null
+        - relationships:
+            to: ref('dim_experience_cleansed')
+            field: profile_id
+            to: ref('dim_education_cleansed')
+            field: profile_id
+  - name: dim_company_cleansed
+    description: Cleansed table which contains companies.
+    columns:
+      - name: company_id
+        description: Primary key for the company
+        tests:
+        - unique
+        - not_null
+  - name: dim_company_location_w_social
+  - name: dim_profile_w_company
+  - name: dim_skills_w_months_edu_job
+  - name: dim_experience_cleansed
+  - name: dim_education_cleansed
+
+      

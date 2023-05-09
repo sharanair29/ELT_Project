@@ -1,0 +1,12 @@
+WITH 
+
+M_EXP_EDU AS (
+        SELECT PROFILE_ID, MONTHS_EDUCATION, MONTHS_EXPERIENCE FROM {{ ref('dim_profile_cleansed') }}
+),
+
+SKILLS AS (
+    SELECT * FROM {{ ref('src_skills') }}
+)
+
+SELECT * FROM M_EXP_EDU 
+NATURAL JOIN SKILLS

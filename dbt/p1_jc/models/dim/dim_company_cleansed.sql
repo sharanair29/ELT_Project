@@ -1,0 +1,32 @@
+{{
+    config(
+        materialized = 'view'
+    )
+}}
+
+WITH SRC_COMPANY AS (
+    SELECT * FROM {{ ref('src_company') }}
+)
+
+SELECT COMPANY_ID,
+    COMPANY_NAME,
+   
+    REPLACE(
+     
+    REPLACE(COMPANY_REVENUE, '$')
+    , ' billion', '000')
+    
+    :: NUMBER(
+        10,
+        2
+    )
+    AS COMPANY_REVENUE_MILLIONS,
+    COMPANY_WEBSITE,
+    COMPANY_INDUSTRY,
+    COMPANY_DESCRIPTION,
+    CAST(COMPANY_FOUNDEDYEAR AS TIMESTAMP) AS COMPANY_FOUNDED_YR,
+    COMPANY_EMPLOYEE_COUNT,
+    COMPANY_SPECIALTY,
+    COMPANY_LOGO_URL
+
+FROM SRC_COMPANY

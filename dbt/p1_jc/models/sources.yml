@@ -1,0 +1,29 @@
+version: 2
+sources:
+  - name: airbyte_database
+    schema: airbyte_schema
+    tables:
+      - name: profile
+        identifier: raw_profile
+        loaded_at_field: _AIRBYTE_EMITTED_AT
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24, period: hour}
+      - name: profile_education
+        identifier: raw_profile_education
+      - name: profile_experience
+        identifier: raw_profile_experience
+      - name: profile_location
+        identifier: raw_profile_location
+      - name: profile_skills
+        identifier: raw_profile_skills
+      - name: company
+        identifier: raw_company
+        loaded_at_field: _AIRBYTE_EMITTED_AT
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24, period: hour}
+      - name: company_location
+        identifier: raw_company_location
+      - name: company_social_media
+        identifier: raw_company_socialmedia

@@ -1,0 +1,17 @@
+version: 2
+exposures:
+  - name: january_capital_dashboard
+    type: dashboard
+    maturity: low
+    url: https://d6cdef66.us2a.app.preset.io/superset/dashboard/p/rak0NRqGgwe/
+    description: Dashboard about profiles and companies
+
+
+    depends_on:
+      - ref('dim_company_cleansed')
+      - ref('dim_profile_w_company')
+      - ref('dim_skills_w_months_edu_job')
+
+    owner:
+      name: Akshara Sadheesh
+      email: shara.sadheesh@gmail.com
