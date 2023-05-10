@@ -1,4 +1,12 @@
+Mock APIs were used for two data sources as below:
 
+Source 1 : Profile
+
+https://mocki.io/v1/d28204d5-99e7-4795-b8f5-79fc1ca94617
+
+Source 2 : Company
+
+https://mocki.io/v1/bcc2aa32-0eee-4058-bafa-2a9aa5030995
 
 Copy the `.example.env` file to `.env` and add your snowflake credentials
 
