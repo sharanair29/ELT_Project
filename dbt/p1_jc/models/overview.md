@@ -1,5 +1,5 @@
 {% docs __overview__ %}
-# January Capital Person Company pipeline
+# Example Person Company pipeline
 Hey, welcome to our pipeline documentation!
 
 Here is the schema of our input data:
