@@ -1,4 +1,4 @@
-Mock APIs were used for two data sources as below:
+Mock APIs were used for two data sources in the formats as below:
 
 Source 1 : Profile
 
