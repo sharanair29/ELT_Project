@@ -1,6 +1,6 @@
 version: 2
 exposures:
-  - name: january_capital_dashboard
+  - name: example_dashboard
     type: dashboard
     maturity: low
     url: https://d6cdef66.us2a.app.preset.io/superset/dashboard/p/rak0NRqGgwe/
