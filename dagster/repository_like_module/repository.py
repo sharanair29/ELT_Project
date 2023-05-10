@@ -9,15 +9,10 @@ from dagster_dbt import dbt_run_op
 
 # DBT TEST
 
-@job(resource_defs={
-    "dbt": ops.custom_dbt_rpc_resource
-})
 
+@job(resource_defs={"dbt": ops.custom_dbt_rpc_resource})
 def my_dbt_rpc_job():
     dbt_run_op()
-
-
-
 
 
 @repository
@@ -29,6 +24,5 @@ def repository_like_module():
         jobs.extract_person,
         # my_dbt_job,
         schedules.company_schedule,
-        schedules.person_schedule
+        schedules.person_schedule,
     ]
-
