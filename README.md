@@ -40,7 +40,7 @@ To check the health of each component:
 
 ## DBT
 
-Send a GET request to http://localhost:8580/ with the raw json as below.
+Send a GET request to http://localhost:8580/jsonrpc with the raw json as below.
 
 
 `

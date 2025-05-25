@@ -25,6 +25,13 @@ models:
   - name: dim_company_location_w_social
   - name: dim_profile_w_company
   - name: dim_skills_w_months_edu_job
+    columns:
+      - name: months_education
+        tests:
+        - positive_value
+      - name: months_experience
+        tests:
+        - positive_value
   - name: dim_experience_cleansed
   - name: dim_education_cleansed
 

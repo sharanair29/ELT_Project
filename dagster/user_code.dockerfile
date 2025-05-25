@@ -17,6 +17,7 @@ WORKDIR /opt/dagster/app
 COPY ["./requirements.txt", "/opt/dagster/app"]
 
 RUN pip install -r requirements.txt
+RUN pip install "pydantic<2.0.0"
 
 COPY [".", "/opt/dagster/app"]
 
