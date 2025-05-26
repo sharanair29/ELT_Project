@@ -2,14 +2,14 @@ from dagster import ScheduleDefinition, DefaultScheduleStatus
 from ..jobs import jobs
 
 
-person_schedule = ScheduleDefinition(
-    job=jobs.extract_person,
+profile_schedule = ScheduleDefinition(
+    job=jobs.extract_profile_job,
     cron_schedule="0 0 * * 0",
     default_status=DefaultScheduleStatus.RUNNING,
 )
 
 company_schedule = ScheduleDefinition(
-    job=jobs.extract_company,
+    job=jobs.extract_company_job,
     cron_schedule="0 0 1 * *",
     default_status=DefaultScheduleStatus.RUNNING,
 )

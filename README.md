@@ -6,7 +6,7 @@ https://mocki.io/v1/d28204d5-99e7-4795-b8f5-79fc1ca94617
 
 Source 2 : Company
 
-https://mocki.io/v1/bcc2aa32-0eee-4058-bafa-2a9aa5030995
+https://mocki.io/v1/b14560dc-c072-43cb-97a5-03ffd590eee3
 
 Copy the `.example.env` file to `.env` and add your snowflake credentials
 
@@ -94,3 +94,53 @@ You should receive the output:
     }
 }
 `
+
+Create a snowflake account on the free trial version. 
+
+Open Airbyte on localhost:8000
+
+Create a new source ---> insert your Mock API URL with the File Connector
+
+Create a new destination to Snowflake:
+
+![alt text](image.png)
+
+As per the image above, upon selection snowflake you will get a list of steps on what scripts to run on Snowflake to create the necessary entities
+
+Hit Run All:
+![alt text](image-1.png)
+
+Set up the destination and run your first manual run from the source to the destination and on snowflake you should have the denormalized and normalized raw output.
+
+![alt text](image-2.png)
+
+Source:
+![alt text](image-5.png)
+
+
+Destination:
+![alt text](image-6.png)
+
+Connections:
+![alt text](image-7.png)
+
+
+The same logic was applied to company data as a source:
+
+![alt text](image-10.png)
+
+Now you have a successful pipeline. To orchestrate this from dagster with the respective dbt transformations: 
+To find the connection id:
+![alt text](image-11.png)
+
+Use this connection id within your dagster files to schedule a job:
+![alt text](image-12.png)
+
+Open localhost:3000 on your browser:
+
+![alt text](image-13.png)
+
+![alt text](image-14.png)
+
+
+![alt text](image-15.png)

@@ -6,13 +6,13 @@ from dagster_dbt import dbt_run_op
 
 
 @job(resource_defs={"airbyte": ops.my_airbyte_resource})
-def extract_person():
-    ops.extract_person_api()
+def extract_profile_job():
+    ops.extract_profile()
 
 
 @job(resource_defs={"airbyte": ops.my_airbyte_resource})
-def extract_company():
-    ops.extract_company_s3()
+def extract_company_job():
+    ops.extract_company()
 
 
 ## Extract, Load with Airbyte and DBT Models
@@ -25,4 +25,4 @@ def extract_company():
     }
 )
 def dependencies_airbyte_dbt():
-    dbt_run_op([ops.extract_person_api(), ops.extract_company_s3()])
+    dbt_run_op([ops.extract_profile(), ops.extract_company()])

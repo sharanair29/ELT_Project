@@ -8,11 +8,11 @@ from dagster_dbt import dbt_rpc_sync_resource
 my_airbyte_resource = airbyte_resource.configured(constants.AIRBYTE_CONFIG)
 
 ## Extract and Load from source ##
-extract_person_api = airbyte_sync_op.configured(
-    {"connection_id": "aa94fbc2-8f03-4f22-bee4-3e7bf67a50bb"}, name="extract_person_api"
+extract_profile = airbyte_sync_op.configured(
+    {"connection_id": "ffb2a90f-d69f-4477-8d9b-8e7b87773d42"}, name="extract_profile"
 )
-extract_company_s3 = airbyte_sync_op.configured(
-    {"connection_id": "4bebbd7c-de07-4f63-b635-c3a0c3e662c8"}, name="extract_company_s3"
+extract_company = airbyte_sync_op.configured(
+    {"connection_id": "45642395-ea02-4f7b-a340-1f8f23629e1c"}, name="extract_company"
 )
 
 

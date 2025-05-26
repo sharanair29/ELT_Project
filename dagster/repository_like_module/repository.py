@@ -20,9 +20,9 @@ def repository_like_module():
     return [
         jobs.dependencies_airbyte_dbt,
         my_dbt_rpc_job,
-        jobs.extract_company,
-        jobs.extract_person,
+        jobs.extract_company_job,
+        jobs.extract_profile_job,
         # my_dbt_job,
         schedules.company_schedule,
-        schedules.person_schedule,
+        schedules.profile_schedule,
     ]
