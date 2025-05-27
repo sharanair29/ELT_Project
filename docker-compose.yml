@@ -43,6 +43,11 @@ services:
       MY_DBT_HOST_PORT: ${MY_DBT_HOST_PORT} 
     networks:
       - docker_example_network
+    volumes:
+      - ./dbt/p1_jc:/usr/app/dbt                         
+      - ./dbt/profile.yml:/root/.dbt/profiles.yml  
+    env_file:
+      - .env
 
   # This service runs dagit, which loads your user code from the user code container.
   # Since our instance uses the QueuedRunCoordinator, any runs submitted from dagit will be put on
@@ -120,6 +125,9 @@ services:
       SF_THREADS: ${SF_THREADS}
     ports:
       - 8580:8580
+    volumes:
+      - ./dbt/p1_jc:/usr/app/dbt                         
+      - ./dbt/profile.yml:/root/.dbt/profiles.yml  
     networks:
       - docker_example_network
 

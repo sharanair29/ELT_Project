@@ -1,9 +1,6 @@
 from dagster import job
+from dagster_dbt import dbt_cli_resource, dbt_run_op
 from ..ops import ops
-from dagster_dbt import dbt_run_op
-
-# Extract and Load with Airbyte only
-
 
 @job(resource_defs={"airbyte": ops.my_airbyte_resource})
 def extract_profile_job():
@@ -15,14 +12,11 @@ def extract_company_job():
     ops.extract_company()
 
 
-## Extract, Load with Airbyte and DBT Models
-
-
-@job(
-    resource_defs={
-        "dbt": ops.custom_dbt_rpc_resource,
-        "airbyte": ops.my_airbyte_resource,
-    }
-)
-def dependencies_airbyte_dbt():
-    dbt_run_op([ops.extract_profile(), ops.extract_company()])
+@job(resource_defs={
+    "dbt": dbt_cli_resource.configured({
+        "project_dir": "/usr/app/dbt",
+        "profiles_dir": "/root/.dbt"
+    })
+})
+def run_dbt_job():
+    dbt_run_op()

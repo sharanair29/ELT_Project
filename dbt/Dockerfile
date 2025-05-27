@@ -1,9 +1,8 @@
 ##
-#  Generic dockerfile for dbt image building.
+# Dockerfile for DBT CLI usage (no RPC server)
 ##
 
 FROM python:3.9.14-slim-bullseye
-
 
 # System setup
 RUN apt-get update \
@@ -26,18 +25,23 @@ RUN apt-get update \
 ENV PYTHONIOENCODING=utf-8
 ENV LANG=C.UTF-8
 
-# Update python
+# Upgrade pip and setuptools
 RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
 
-# Set docker basics
+# Set workdir
 WORKDIR /usr/app/dbt/
 VOLUME /usr/app
 
+# Install Python dependencies
 COPY ["./requirements.txt", "/usr/app/dbt/"]
 RUN pip install -r requirements.txt
 
+# Copy DBT project files
 COPY ["./p1_jc", "."]
+
+# Copy DBT profiles
 COPY ["profile.yml", "/root/.dbt/profiles.yml"]
 
-ENTRYPOINT ["dbt-rpc", "serve"]
-
+# Default command allows override in container
+ENTRYPOINT ["dbt"]
+CMD ["--help"]
