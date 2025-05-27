@@ -2,7 +2,7 @@ Mock APIs were used for two data sources in the formats as below:
 
 Source 1 : Profile
 
-https://mocki.io/v1/d28204d5-99e7-4795-b8f5-79fc1ca94617
+https://mocki.io/v1/bfb9dc25-d4ad-457c-a3a7-ec3bc7abb088
 
 Source 2 : Company
 
