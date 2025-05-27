@@ -144,6 +144,6 @@ Open localhost:3000 on your browser:
 
 
 ![alt text](image-15.png)
-
+![alt text](image-18.png)
 DBT Models Output:
 ![alt text](image-17.png)
