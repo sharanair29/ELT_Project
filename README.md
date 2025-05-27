@@ -30,15 +30,15 @@ To run the containers:
 ![docker_network](https://github.com/sharanair29/ELT_Project/assets/94154731/ac0c5107-40b1-4b8f-841d-3da5256f3957)
 
 
-The `dagster` folder contains a sub-folder called `repository_like_module` which has subfolders for dagster assets, jobs, ops and schedules. Airbyte connection ids were used to schedule airbyte jobs from dagster. DBT-RPC was used to schedule dbt runs from dagster and this version is deprecated from version 1.5 onwards which is why this project utilizes dbt version 1.4.
+The `dagster` folder contains a sub-folder called `repository_like_module` which has subfolders for dagster assets, jobs, ops and schedules. Airbyte connection ids were used to schedule airbyte jobs from dagster. DBT-CLI was used to schedule dbt runs from dagster.
 
 The dagster folder has Dockerfiles that were taken from the example https://docs.dagster.io/examples/deploy_docker.
 
-The `dbt` folder contains the dbt project as well as a Dockerfile to containerize it.
+The `dbt` folder contains the dbt project as well as a Dockerfile to containerize it, this is no longer needed since we have moved from DBT-RPC to DBT-CLI.
 
 To check the health of each component:
 
-## DBT
+## DBT (Ignore this section)
 
 Send a GET request to http://localhost:8580/jsonrpc with the raw json as below.
 
@@ -132,7 +132,7 @@ To find the connection id:
 Use this connection id within your dagster files to schedule a job:
 ![alt text](image-12.png)
 
-Open localhost:3000 on your browser:
+Open Dagster UI on localhost:3000 from your browser:
 
 ![alt text](image-13.png)
 
