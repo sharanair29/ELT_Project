@@ -112,22 +112,18 @@ Hit Run All:
 
 Set up the destination and run your first manual run from the source to the destination and on snowflake you should have the denormalized and normalized raw output.
 
-![alt text](image-2.png)
+![alt text](image-19.png)
 
 Source:
-![alt text](image-5.png)
+![alt text](image-20.png)
 
 
 Destination:
-![alt text](image-6.png)
+![alt text](image-21.png)
 
 Connections:
-![alt text](image-7.png)
+![alt text](image-22.png)
 
-
-The same logic was applied to company data as a source:
-
-![alt text](image-10.png)
 
 Now you have a successful pipeline. To orchestrate this from dagster with the respective dbt transformations: 
 To find the connection id:
