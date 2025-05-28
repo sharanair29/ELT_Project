@@ -108,38 +108,38 @@ Create a new destination to Snowflake:
 As per the image above, upon selection snowflake you will get a list of steps on what scripts to run on Snowflake to create the necessary entities
 
 Hit Run All:
-![alt text](image-1.png)
+![alt text](__readme_images/image-1.png)
 
 Set up the destination and run your first manual run from the source to the destination and on snowflake you should have the denormalized and normalized raw output.
 
-![alt text](image-19.png)
+![alt text](__readme_images/image-19.png)
 
 Source:
-![alt text](image-20.png)
+![alt text](__readme_images/image-20.png)
 
 
 Destination:
-![alt text](image-21.png)
+![alt text](__readme_images/image-21.png)
 
 Connections:
-![alt text](image-22.png)
+![alt text](__readme_images/image-22.png)
 
 
 Now you have a successful pipeline. To orchestrate this from dagster with the respective dbt transformations: 
 To find the connection id:
-![alt text](image-11.png)
+![alt text](__readme_images/image-11.png)
 
 Use this connection id within your dagster files to schedule a job:
-![alt text](image-12.png)
+![alt text](__readme_images/image-12.png)
 
 Open Dagster UI on localhost:3000 from your browser:
 
-![alt text](image-13.png)
+![alt text](__readme_images/image-13.png)
 
-![alt text](image-14.png)
+![alt text](__readme_images/image-14.png)
 
 
-![alt text](image-15.png)
-![alt text](image-18.png)
+![alt text](__readme_images/image-15.png)
+![alt text](__readme_images/image-18.png)
 DBT Models Output:
-![alt text](image-17.png)
+![alt text](__readme_images/image-17.png)
