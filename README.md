@@ -103,7 +103,7 @@ Create a new source ---> insert your Mock API URL with the File Connector
 
 Create a new destination to Snowflake:
 
-![alt text](image.png)
+![alt text](__readme_images/image.png)
 
 As per the image above, upon selection snowflake you will get a list of steps on what scripts to run on Snowflake to create the necessary entities
 
